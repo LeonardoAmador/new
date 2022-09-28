@@ -9,23 +9,26 @@
 </head>
 <body>      
     <form action="index.php" method="post" autocomplete="on">
-        <section class="card-top">
-            <img src="./img/imgform.png" alt="picture">
-            <h1>consulte cep</h1>
-        </section>
-        <section class="card-middle">
-            <label>Informe seu Cep: </label>
-            <input type="number" name="cep" placeholder="ex: 16202-005" 
-            required>
-        </section>
-        <section class="card-bottom">
-            <button id="bPesquisar" name="bPesquisar" 
-            type="submit">Search</button>
-            <button type="reset" value="clean-screen">Reset</button>
-        </section>
-        <section class="inform" style="padding-bottom: 10px">
-            <!--ENDERECO-->
-        </section>
+        <fieldset>
+            <legend>BRL >> USD</legend>
+            <section class="card-top">
+                <img src="./img/imgform.png" alt="picture">
+                <h1>Conversor de Moedas</h1>
+            </section>
+            <section class="card-middle">
+                <label>Conversor: </label>
+                <input type="number" name="real" placeholder="R$:20.00"
+                required>
+            </section>
+            <section class="card-bottom">
+                <button id="bPesquisar" name="bPesquisar"
+                type="submit">Convert</button>
+                <button type="reset" value="clean-screen">Reset</button>
+            </section>
+            <section class="inform" style="padding-bottom: 10px">
+                <!--DADOS-->
+            </section>
+        </fieldset>
     </form>
 </body>
 </html>
