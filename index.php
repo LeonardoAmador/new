@@ -2,6 +2,12 @@
 
     $formulario = file_get_contents("templete.html");
 
+    $cotacaoDia = array();
+    if(file_exists('cotacao.json')){
+        $conteudo = file_get_contents('cotacao.json');
+        $cotacaoDia = json_decode($conteudo, true);
+    }
+
     if (isset($_REQUEST['bPesquisar'])){
         $real = $_REQUEST['real'];
 
@@ -23,6 +29,12 @@
             $vrTotal = number_format($vrTotal, 2, ',', '.');
             $cotacao = "<h3>US$ Total = $vrTotal<br>";
             $cotacao = $cotacao . "(Cotação Atual = $vrDolar)</h3>";
+            $today = array();
+            // $today[0] = date();
+            $today[1] = $vrDolar;
+            $cotacaoDia[] = $today;
+            $dadosJson = json_encode($cotacaoDia);
+            file_put_contents('cotacao.json', $dadosJson);
         }else {
             $cotacao = "Coverção inválida.";
         }
